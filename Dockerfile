@@ -1,5 +1,5 @@
 FROM node:16-alpine3.12 as build
-LABEL org.opencontainers.image.source https://github.com/Stuff-Dockerfiles/node
+LABEL org.opencontainers.image.source https://github.com/SupaStuff/node
 
 RUN apk update \
  && apk add -u --no-cache \
