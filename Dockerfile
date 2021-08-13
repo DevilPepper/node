@@ -11,6 +11,18 @@ RUN apk update \
             openssh-client \
             vim
 
+ARG USERNAME=node
+
+RUN mkdir -p /home/$USERNAME/workspace/node_modules \
+        /home/$USERNAME/.vscode-server/extensions \
+        /home/$USERNAME/.vscode-server-insiders/extensions \
+ && chown -R $USERNAME \
+        /home/$USERNAME/workspace \
+        /home/$USERNAME/.vscode-server \
+        /home/$USERNAME/.vscode-server-insiders
+
+USER $USERNAME
+
 FROM build as test
 
 RUN set -ex
