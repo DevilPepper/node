@@ -43,10 +43,10 @@ jobs:
           username: ${{ env.github_actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Push image
+      - name: Push base image
         uses: docker/build-push-action@v2.6.1
         with:
-          target: build
+          target: build-base
           push: true
           tags: |
             ${{ env.image_name }}:latest
@@ -55,3 +55,14 @@ jobs:
             ghcr.io/${{ env.image_name }}:latest
             ghcr.io/${{ env.image_name }}:${{ env.sha }}
             ghcr.io/${{ env.image_name }}:${{ env.version }}
+
+      - name: Push devcontainer image
+        uses: docker/build-push-action@v2.6.1
+        with:
+          target: build-vscode
+          push: true
+          tags: |
+            ${{ env.image_name }}:vscode
+            ${{ env.image_name }}:vscode-${{ env.sha }}
+            ghcr.io/${{ env.image_name }}:vscode
+            ghcr.io/${{ env.image_name }}:vscode-${{ env.sha }}

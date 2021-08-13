@@ -12,5 +12,5 @@ jobs:
       - name: Test image
         uses: docker/build-push-action@v2.6.1
         with:
-          target: test
+          target: test-base
           push: false
