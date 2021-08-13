@@ -6,6 +6,7 @@ RUN apk update \
             bash \
             curl \
             git \
+            gnupg \
             jq \
             less \
             openssh-client \
