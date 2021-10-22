@@ -1,4 +1,4 @@
-FROM node:16-alpine3.12 as build-base
+FROM node:17-alpine3.12 as build-base
 LABEL org.opencontainers.image.source https://github.com/SupaStuff/node
 
 RUN apk update \
