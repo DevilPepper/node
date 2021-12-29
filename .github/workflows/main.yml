@@ -64,5 +64,7 @@ jobs:
           tags: |
             ${{ env.image_name }}:vscode
             ${{ env.image_name }}:vscode-${{ env.sha }}
+            ${{ env.image_name }}:vscode-${{ env.version }}
             ghcr.io/${{ env.image_name }}:vscode
             ghcr.io/${{ env.image_name }}:vscode-${{ env.sha }}
+            ghcr.io/${{ env.image_name }}:vscode-${{ env.version }}
